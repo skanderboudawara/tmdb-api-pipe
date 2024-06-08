@@ -1,0 +1,8 @@
+psycopg2-binary
+requests
+python-dotenv
+ruff
+pytest
+backoff
+plotly
+dash
