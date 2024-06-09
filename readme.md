@@ -2,6 +2,7 @@
 Configure the .env file
 
 PS: some data are shown in the readme file for exercise purpose. Else credential must not be exposed.
+Also configuration/pgadmin & data are kept in the repository for exercise purpose else they should be git-ignored.
 ```
 BEARER_TOKEN=<Add the TMDB Token Here>
 DBNAME=soyhuce_db  # These are configured in the Docker image
