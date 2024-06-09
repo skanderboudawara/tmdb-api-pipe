@@ -54,7 +54,6 @@ services:
         ipv4_address: "192.168.92.23"
     ports:
       - "8050:8050"
-    command: python /app/dahsboard.py
 networks:
   project_soyhuce:
     ipam:

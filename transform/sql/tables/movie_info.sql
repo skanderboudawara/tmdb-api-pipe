@@ -14,7 +14,17 @@ CREATE TABLE IF NOT EXISTS movies_info (
     vote_count     INTEGER
 );
 
-CREATE INDEX idx_movie_info_id on movies_info(movie_id);
+DO $$
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1
+        FROM pg_indexes
+        WHERE indexname = 'idx_movie_info_id'
+        AND tablename = 'movies_info'
+    ) THEN
+        CREATE INDEX idx_movie_info_id ON movies_info(movie_id);
+    END IF;
+END $$;
 
 COMMENT ON COLUMN movies_info.movie_id       IS 'Movie Id';
 COMMENT ON COLUMN movies_info.genres         IS 'Movies Genra';

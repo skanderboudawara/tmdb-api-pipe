@@ -2,7 +2,7 @@ import pytest
 from psycopg2 import OperationalError
 from psycopg2.extensions import STATUS_READY
 
-from lib.db_ctx import SqlContext
+from clib.db_ctx import SqlContext
 
 class MockCursor:
     def __init__(self):

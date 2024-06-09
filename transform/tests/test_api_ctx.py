@@ -4,7 +4,7 @@ import requests
 import pytest
 import backoff
 
-from lib.api_ctx import fatal_code, tmdb_response
+from clib.api_ctx import fatal_code, tmdb_response
 
 class MockResponse:
     def __init__(self, status_code):

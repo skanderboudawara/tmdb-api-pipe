@@ -1,4 +1,4 @@
-CREATE VIEW movie_status_view AS
+CREATE OR REPLACE VIEW movie_status_view AS
 SELECT
     ml.movie_id,
     CASE

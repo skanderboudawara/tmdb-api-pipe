@@ -1,17 +1,9 @@
 import dash
 from dash import dcc, html
-from dash.dependencies import Input, Output
 import plotly.graph_objs as go
-from lib.db_ctx import SqlContext
-import os
+from clib.db_ctx import SqlContext, get_credentials
 
-with SqlContext(
-    os.getenv("HOST"),
-    os.getenv("USER"),
-    os.getenv("PASSWORD"),
-    os.getenv("DBNAME"),
-    os.getenv("PORT"),
-) as sql_context:
+with SqlContext(**get_credentials()) as sql_context:
     _, yearly_budget = sql_context.execute_query(
         query="SELECT year, total_budget, total_revenue FROM public.budget_revenue_per_year;",
         fetch=True,

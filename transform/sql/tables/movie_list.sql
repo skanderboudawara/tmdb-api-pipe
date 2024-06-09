@@ -3,7 +3,18 @@ CREATE TABLE IF NOT EXISTS movie_list (
     is_movie_adult BOOLEAN
 );
 
-CREATE INDEX idx_movie_id on movie_list(movie_id);
+DO $$
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1
+        FROM pg_indexes
+        WHERE indexname = 'idx_movie_id'
+        AND tablename = 'movie_list'
+    ) THEN
+        CREATE INDEX idx_movie_id ON movie_list(movie_id);
+    END IF;
+END $$;
+
 
 COMMENT ON COLUMN movie_list.movie_id IS 'TMDB movie ID';
 COMMENT ON COLUMN movie_list.is_movie_adult IS 'True if movie for adult or not';
