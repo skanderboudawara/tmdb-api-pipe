@@ -14,10 +14,10 @@ def run_sql_files(sql_folder_path: str) -> None:
     """
     if not isinstance(sql_folder_path, str):
         raise TypeError("sql_folder_path must be a string")
-    # Define the order of subfolders
+    # Define the order of subfolder
     subfolder_order = ['tables', 'functions', 'procedures', 'views']
 
-    # Iterate over the subfolders in the specified order
+    # Iterate over the subfolder in the specified order
     for subfolder in subfolder_order:
         subfolder_path = os.path.join(sql_folder_path, subfolder)
         if os.path.isdir(subfolder_path):

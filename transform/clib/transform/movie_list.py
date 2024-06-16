@@ -11,7 +11,7 @@ class MovieList():
     """
     This class is used to recreate MovieList
     
-    :param fetch_all: (bool), to fetch all information from all pages. Else a signle page. Default False.
+    :param fetch_all: (bool), to fetch all information from all pages. Else a single page. Default False.
     
     :returns: None
     """

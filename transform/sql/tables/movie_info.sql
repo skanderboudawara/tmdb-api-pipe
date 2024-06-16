@@ -27,7 +27,7 @@ BEGIN
 END $$;
 
 COMMENT ON COLUMN movies_info.movie_id       IS 'Movie Id';
-COMMENT ON COLUMN movies_info.genres         IS 'Movies Genra';
+COMMENT ON COLUMN movies_info.genres         IS 'Movies Genre';
 COMMENT ON COLUMN movies_info.imdb_id        IS 'Imdb Id';
 COMMENT ON COLUMN movies_info.original_title IS 'Original Movie Title';
 COMMENT ON COLUMN movies_info.overview       IS 'Movie description';

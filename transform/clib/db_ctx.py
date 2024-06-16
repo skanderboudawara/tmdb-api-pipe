@@ -8,11 +8,11 @@ from typing import Optional, Tuple
 
 def get_credentials() -> dict:
     """
-    This method will get the OS credentials from enviorment
+    This method will get the OS credentials from environment
     
     :param: None
     
-    :returns: (dict), with diffrent credentials
+    :returns: (dict), with different credentials
     """
     return {
         "host"    : os.getenv("HOST"),
@@ -68,7 +68,7 @@ class SqlContext():
         """
         This module is used to close the connection of the postgresql db
         
-        :param exc_type: type of exception occuring
+        :param exc_type: type of exception occurring
         :param exc_value: exception instance released
         :param traceback: exception traceback
         

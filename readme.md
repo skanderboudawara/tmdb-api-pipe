@@ -5,9 +5,9 @@ PS: some data are shown in the readme file for exercise purpose. Else credential
 Also configuration/pgadmin & data are kept in the repository for exercise purpose else they should be git-ignored.
 ```
 BEARER_TOKEN=<Add the TMDB Token Here>
-DBNAME=soyhuce_db  # These are configured in the Docker image
+DBNAME=tmdb_db  # These are configured in the Docker image
 USER=postgres  # These are configured in the Docker image
-PASSWORD=soyhuce  # These are configured in the Docker image
+PASSWORD=tmdb  # These are configured in the Docker image
 HOST=192.168.92.22  # These are configured in the Docker image
 PORT=5432  # These are configured in the Docker image
 ```

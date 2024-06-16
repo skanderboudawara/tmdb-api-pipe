@@ -1,9 +1,9 @@
 version: "3.8"
-name: soyhuce_skander_boudawara_exercice
+name: tmdb_skander_boudawara_exercice
 services:
-  postgres_soyhuce:
+  postgres_tmdb:
     image: "postgres:14.8"
-    container_name: postgres_soyhuce
+    container_name: postgres_tmdb
     # automatically restarts the container - Docker daemon on restart or 
     # the container itself is manually restarted
     restart: always 
@@ -11,51 +11,51 @@ services:
       - ./data:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: soyhuce
-      POSTGRES_DB: soyhuce_db
+      POSTGRES_PASSWORD: tmdb
+      POSTGRES_DB: tmdb_db
     ports:
       - "5432:5432" 
     networks:
-      project_soyhuce:
+      project_tmdb:
         ipv4_address: "192.168.92.22"
-  pgadmin_soyhuce:
+  pgadmin_tmdb:
     # Image of the second service to launch
-    container_name: pgadmin4_soyhuce
+    container_name: pgadmin4_tmdb
     image: dpage/pgadmin4
     restart: always
     depends_on:
-      - postgres_soyhuce
+      - postgres_tmdb
     ports:
       - "5050:80"
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@soyhuce.com
-      PGADMIN_DEFAULT_PASSWORD: soyhuce
+      PGADMIN_DEFAULT_EMAIL: admin@tmdb.com
+      PGADMIN_DEFAULT_PASSWORD: tmdb
       PGADMIN_CONFIG_MASTER_PASSWORD_REQURED: "False"
       # PGADMIN_CONFIG_SERVER_MODE: 'False'
     volumes:
       - ./configuration/pgadmin:/var/lib/pgadmin
     networks:
-      project_soyhuce:
+      project_tmdb:
         ipv4_address: "192.168.92.21"
-  python_soyhuce:
-    container_name: python_soyhuce
+  python_tmdb:
+    container_name: python_tmdb
     build:
       context: .
       dockerfile: Dockerfile
     depends_on: 
-     - pgadmin_soyhuce
+     - pgadmin_tmdb
     env_file:
       - .env
     tty: true
     volumes:
      - ./transform:/app
     networks:
-      project_soyhuce:
+      project_tmdb:
         ipv4_address: "192.168.92.23"
     ports:
       - "8050:8050"
 networks:
-  project_soyhuce:
+  project_tmdb:
     ipam:
       driver: default
       config:
