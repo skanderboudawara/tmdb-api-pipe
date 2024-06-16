@@ -74,7 +74,7 @@ initial_end_date = '2021-12-31'
 
 # Define app layout
 app.layout = html.Div([
-    html.H1("tmdb Skander Boudawara"),
+    html.H1("TheMovieDb Skander Boudawara"),
     html.H2("Macro analysis on TMDB movies"),
     dcc.Graph(
         id='budget-revenue-graph',
