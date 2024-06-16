@@ -109,7 +109,8 @@ ipython_config.py
 .pdm.toml
 .pdm-python
 .pdm-build/
-
+/data/
+/configuration/pgadmin/
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
 __pypackages__/
 settings.json
@@ -131,7 +132,7 @@ venv.bak/
 # Spyder project settings
 .spyderproject
 .spyproject
-
+.env
 # Rope project settings
 .ropeproject
 
